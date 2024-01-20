@@ -20,6 +20,7 @@ android {
     }
 
     buildFeatures {
+        buildConfig = true
         viewBinding = true
     }
 
@@ -121,7 +122,7 @@ fun DependencyHandlerScope.implementRoom() {
 }
 
 fun DependencyHandlerScope.implementHilt() {
-    val hiltVersion = "2.44"
+    val hiltVersion = "2.50"
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
 }

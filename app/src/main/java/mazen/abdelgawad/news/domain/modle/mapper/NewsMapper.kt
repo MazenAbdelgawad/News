@@ -20,7 +20,7 @@ class NewsMapper {
     }
 
     private fun mapPublishedAt(publishedAt: String?): String? =
-        if (publishedAt.isNullOrBlank() || publishedAt.length < 9) publishedAt
-        else publishedAt.substring(0, 9)
+        if (publishedAt.isNullOrBlank() || publishedAt.length < 10) publishedAt
+        else publishedAt.substring(0, 10)
 
 }

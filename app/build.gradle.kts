@@ -64,6 +64,7 @@ dependencies {
     implementRetrofit()
     implementRoom()
     implementHilt()
+    implementShimmer()
 }
 
 fun DependencyHandlerScope.implementLifecycleExtensions() {
@@ -125,4 +126,8 @@ fun DependencyHandlerScope.implementHilt() {
     val hiltVersion = "2.50"
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
+}
+
+fun DependencyHandlerScope.implementShimmer() {
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
 }

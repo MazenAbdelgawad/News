@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_occurred">حدث خطأ ^_^</string>
+    <string name="no_internet_check_your_connection">لا يوجد انترنت ، قم بفحص الاتصال</string>
+    <string name="remote_response_parsing_error">خطأ في معالجه البيانات المستلمه</string>
+    <string name="resource_not_found">المصدر غير موجود</string>
+    <string name="server_error">خطأ في السيرفير</string>
+    <string name="unauthorized">خطأ في صلاحيه الدخول</string>
+    <string name="unknown_error">خطأ غير معروف</string>
+    <string name="no_data_found">لا توجد بيانات</string>
+</resources>

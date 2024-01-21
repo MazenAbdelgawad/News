@@ -8,12 +8,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import mazen.abdelgawad.news.R
-import mazen.abdelgawad.news.databinding.ActivityMainBinding
+import mazen.abdelgawad.news.databinding.ActivityNewsBinding
 
 @AndroidEntryPoint
 class NewsActivity : AppCompatActivity() {
 
-    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private val binding by lazy { ActivityNewsBinding.inflate(layoutInflater) }
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {

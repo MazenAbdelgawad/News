@@ -26,5 +26,6 @@ class NewsActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         setupActionBarWithNavController(navController)
+        binding.toolbar.setTitle(R.string.app_name)
     }
 }

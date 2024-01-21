@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="colorPrimary">#007A78</color>
+    <color name="colorPrimaryDark">#025957</color>
+    <color name="colorAccent">#FFC745</color>
     <color name="shimmer_placeholder_color">#40AAAAAA</color>
     <color name="error">#AF1414</color>
 </resources>

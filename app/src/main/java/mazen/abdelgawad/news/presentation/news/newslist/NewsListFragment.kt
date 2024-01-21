@@ -48,9 +48,18 @@ class NewsListFragment : Fragment() {
         lifecycleScope.launch {
             viewModel.fetchNews().collect { result ->
                 when (result) {
-                    is Result.Loading -> show("loading")
-                    is Result.Failure -> show(result.failureReason.javaClass.simpleName)
+                    is Result.Loading -> {
+                        startShimmer()
+                        show("loading")
+                    }
+
+                    is Result.Failure -> {
+                        stopShimmer()
+                        show(result.failureReason.javaClass.simpleName)
+                    }
+
                     is Result.Success -> {
+                        stopShimmer()
                         show("total= ${result.data?.size}")
                         result.data?.let {
                             this@NewsListFragment.newsListAdapter.setItem(it)
@@ -64,6 +73,18 @@ class NewsListFragment : Fragment() {
     fun show(text: String) {
         Toast.makeText(this.activity, text, Toast.LENGTH_LONG).show()
         Log.d("ShowNews", text)
+    }
+
+    private fun startShimmer() {
+        binding.shimmerFrameLayout.startShimmer()
+        binding.shimmerFrameLayout.visibility = View.VISIBLE
+        binding.recyclerViewNews.visibility = View.GONE
+    }
+
+    private fun stopShimmer() {
+        binding.shimmerFrameLayout.stopShimmer()
+        binding.shimmerFrameLayout.visibility = View.VISIBLE
+        binding.recyclerViewNews.visibility = View.VISIBLE
     }
 
 }

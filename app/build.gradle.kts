@@ -90,7 +90,7 @@ fun DependencyHandlerScope.implementRecyclerView() {
 fun DependencyHandlerScope.implementGlide() {
     val glideVersion = "4.16.0"
     implementation("com.github.bumptech.glide:glide:$glideVersion")
-    annotationProcessor("com.github.bumptech.glide:compiler:$glideVersion")
+    kapt("com.github.bumptech.glide:compiler:$glideVersion")
 }
 
 fun DependencyHandlerScope.implementCoroutines() {

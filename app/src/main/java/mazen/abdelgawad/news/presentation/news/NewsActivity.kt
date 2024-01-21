@@ -24,8 +24,8 @@ class NewsActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.navHost) as NavHostFragment
         this.navController = navHostFragment.findNavController()
 
-        setSupportActionBar(binding.toolbar)
-        setupActionBarWithNavController(navController)
+//        setSupportActionBar(binding.toolbar)
+//        setupActionBarWithNavController(navController)
         binding.toolbar.setTitle(R.string.app_name)
     }
 }

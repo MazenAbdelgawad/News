@@ -11,7 +11,6 @@ class NewsMapper {
                 content = it.content,
                 description = it.description,
                 publishedAt = mapPublishedAt(it.publishedAt),
-                source = it.source,
                 title = it.title,
                 url = it.url,
                 urlToImage = it.urlToImage

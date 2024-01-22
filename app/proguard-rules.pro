@@ -26,6 +26,9 @@
 -optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
 -keepattributes Exceptions, InnerClasses, *Annotation*, Signature
 
+-obfuscationdictionary dictionary.txt
+-packageobfuscationdictionary dictionary.txt
+-classobfuscationdictionary dictionary.txt
 
 -dontnote andoridx.**
 -dontnote com.srt.decoder.**

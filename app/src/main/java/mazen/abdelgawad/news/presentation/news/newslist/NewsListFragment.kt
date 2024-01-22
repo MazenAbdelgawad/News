@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.size
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import mazen.abdelgawad.news.R
+import mazen.abdelgawad.news.common.utils.NetworkState
 import mazen.abdelgawad.news.data.modle.FailureReason
 import mazen.abdelgawad.news.data.modle.Result
 import mazen.abdelgawad.news.databinding.FragmentNewsListBinding
@@ -30,6 +32,8 @@ class NewsListFragment : Fragment() {
 
         this.loadData()
         this.handleNewsRecyclerView()
+
+        this.monitorNetworkState()
 
         return binding.root
     }
@@ -80,10 +84,7 @@ class NewsListFragment : Fragment() {
 
     private fun handleFailureState(failureReason: FailureReason) {
         when (failureReason) {
-            is FailureReason.NoInternet -> showError(
-                R.string.no_internet_check_your_connection,
-                R.drawable.img_no_internet
-            )
+            is FailureReason.NoInternet -> this.showErrorNoInternet()
 
             is FailureReason.RemoteResponseParsingError -> showError(
                 getString(R.string.remote_response_parsing_error) + " [${failureReason.message}]"
@@ -101,6 +102,11 @@ class NewsListFragment : Fragment() {
             is FailureReason.ResourceNotFound -> showError(R.string.resource_not_found)
             is FailureReason.UnAuthorized -> showError(R.string.unauthorized)
         }
+    }
+
+    private fun showErrorNoInternet() {
+        if (newsListAdapter.itemCount > 0) return
+        this.showError(R.string.no_internet_check_your_connection, R.drawable.img_no_internet)
     }
 
     private fun showError(msgResourceId: Int, imgResourceId: Int = R.drawable.img_error) {
@@ -133,6 +139,17 @@ class NewsListFragment : Fragment() {
         binding.shimmerFrameLayout.stopShimmer()
         binding.shimmerFrameLayout.visibility = View.GONE
         binding.recyclerViewNews.visibility = View.VISIBLE
+    }
+
+    private fun monitorNetworkState() {
+        lifecycleScope.launch {
+            viewModel.fetchNetworkState().collect { result ->
+                when (result) {
+                    NetworkState.Connected -> loadData()
+                    NetworkState.Disconnected -> showErrorNoInternet()
+                }
+            }
+        }
     }
 
 }

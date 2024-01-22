@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">News</string>
+    <string name="error_occurred">Error occurred ^_^</string>
+    <string name="no_internet_check_your_connection">No Internet. Check your connection</string>
+    <string name="remote_response_parsing_error">Remote Response Parsing Error</string>
+    <string name="resource_not_found">Resource Not Found</string>
+    <string name="server_error">Server Error</string>
+    <string name="unauthorized">UnAuthorized</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="no_data_found">No data found</string>
+    <string name="by">"by "</string>
+    <string name="author">author</string>
+    <string name="published_at">"Published at "</string>
+    <string name="click_below_to_continue_read">click below to continue read..</string>
 </resources>

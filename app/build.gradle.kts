@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -64,6 +65,7 @@ dependencies {
     implementRetrofit()
     implementRoom()
     implementHilt()
+    implementShimmer()
 }
 
 fun DependencyHandlerScope.implementLifecycleExtensions() {
@@ -89,7 +91,7 @@ fun DependencyHandlerScope.implementRecyclerView() {
 fun DependencyHandlerScope.implementGlide() {
     val glideVersion = "4.16.0"
     implementation("com.github.bumptech.glide:glide:$glideVersion")
-    annotationProcessor("com.github.bumptech.glide:compiler:$glideVersion")
+    kapt("com.github.bumptech.glide:compiler:$glideVersion")
 }
 
 fun DependencyHandlerScope.implementCoroutines() {
@@ -125,4 +127,8 @@ fun DependencyHandlerScope.implementHilt() {
     val hiltVersion = "2.50"
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
+}
+
+fun DependencyHandlerScope.implementShimmer() {
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
 }

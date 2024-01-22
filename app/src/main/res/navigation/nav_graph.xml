@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newsListFragment">
+
+    <fragment
+        android:id="@+id/newsListFragment"
+        android:name="mazen.abdelgawad.news.presentation.news.newslist.NewsListFragment"
+        android:label="NewsListFragment">
+        <action
+            android:id="@+id/action_newsList_to_newsDetails"
+            app:destination="@id/newsDetailsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailsFragment"
+        android:name="mazen.abdelgawad.news.presentation.news.newsdetails.NewsDetailsFragment"
+        android:label="fragment_news_details"
+        tools:layout="@layout/fragment_news_details">
+
+        <argument
+            android:name="selected_news"
+            app:argType="mazen.abdelgawad.news.domain.modle.News" />
+    </fragment>
+
+</navigation>

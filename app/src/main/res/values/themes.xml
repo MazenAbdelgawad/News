@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/AppTextViewStyle</item>
     </style>
 
     <style name="Theme.News" parent="Base.Theme.News" />
@@ -13,6 +14,11 @@
         <item name="android:textColorPrimary">@color/colorAccent</item>
         <item name="android:textColorSecondary">@color/colorAccent</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AppTextViewStyle" parent="Widget.AppCompat.TextView">
+        <item name="android:textDirection">locale</item>
+        <item name="android:textAlignment">viewStart</item>
     </style>
 
 </resources>

@@ -131,7 +131,7 @@ class NewsListFragment : Fragment() {
 
     private fun stopShimmer() {
         binding.shimmerFrameLayout.stopShimmer()
-        binding.shimmerFrameLayout.visibility = View.VISIBLE
+        binding.shimmerFrameLayout.visibility = View.GONE
         binding.recyclerViewNews.visibility = View.VISIBLE
     }
 

@@ -19,3 +19,32 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+###########################################################
+
+-optimizationpasses 5
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*
+-keepattributes Exceptions, InnerClasses, *Annotation*, Signature
+
+
+-dontnote andoridx.**
+-dontnote com.srt.decoder.**
+-dontwarn com.google.**
+-dontwarn okhttp3.**
+-dontwarn okio.**
+
+-ignorewarnings
+
+-dontwarn okhttp3.internal.platform.*
+-dontwarn com.oracle.svm.core.annotate.**
+
+-keep class * {
+    @com.oracle.svm.core.annotate.Delete *;
+}
+-keep class org.bouncycastle.jsse.** { *; }
+-keep class org.bouncycastle.jsse.** { *; }
+-keep class okhttp3.internal.platform.android.BouncyCastleSocketAdapter {
+    *;
+}
+
+-keep class mazen.abdelgawad.news.data.remote.models.** { *; }

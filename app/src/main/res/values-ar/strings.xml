@@ -9,4 +9,8 @@
     <string name="unauthorized">خطأ في صلاحيه الدخول</string>
     <string name="unknown_error">خطأ غير معروف</string>
     <string name="no_data_found">لا توجد بيانات</string>
+    <string name="by">"كتبه "</string>
+    <string name="author">المؤلف </string>
+    <string name="published_at">"نشر في "</string>
+    <string name="click_below_to_continue_read">أضغط علي اللينك بالأسفل لتكملة القراءة</string>
 </resources>

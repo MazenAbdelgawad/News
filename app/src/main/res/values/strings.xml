@@ -8,4 +8,8 @@
     <string name="unauthorized">UnAuthorized</string>
     <string name="unknown_error">Unknown Error</string>
     <string name="no_data_found">No data found</string>
+    <string name="by">"by "</string>
+    <string name="author">author</string>
+    <string name="published_at">"Published at "</string>
+    <string name="click_below_to_continue_read">click below to continue read..</string>
 </resources>
